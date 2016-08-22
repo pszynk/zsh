@@ -32,11 +32,5 @@ alias ytd="youtube-dl --external-downloader aria2c --external-downloader-args \
     -o '%(title)s.%(ext)s'"
 #}}}
 
-
-# ssh {{{
-#alias mion="ssh pszynkie@mion.elka.pw.edu.pl"
-#alias gislogin="sudo ssh pszynkie@mion.elka.pw.edu.pl -L 80:berni.ire.pw.edu.pl:80"
-# }}}
-
 # feh catalogue
 alias fehc='feh -t -E 128 -y 128 -W 1024 -H 800'
