@@ -1,0 +1,49 @@
+#compdef autorandr
+
+_autorandr() {
+    local curcontext="$curcontext" state line
+    local -a profiles
+    typeset -A opt_args
+
+    #_arguments \
+        #'1: :->country'\
+        #'*: :->city'
+
+
+    profiles=$(ls ~/.config/autorandr)
+
+    # Example of call to _arguments function with one option and one argument
+    _arguments : \
+        {-h,--help}'[show help]' \
+        {-c,--change}'[reload current setup]' \
+        {-s,--save}'[save your current setup to profile]:profile:{compadd -X "Profile" ${(f)profiles}}' \
+        {-l,--load}'[load profile]:profile:{compadd -X "Profile" ${(f)profiles}}' \
+        {-d,--default}'[set the default profile]:profile:{compadd -X "Profile" ${(f)profiles}}' \
+        '--force[force (re)loading of a profile]' \
+        '--fingerprint[fingerprint your current hardware setup]' \
+        '--config[dump your current xrandr setup]' \
+        '--dry-run[don''t change anything, only print the xrandr commands]'\
+        '--debug[enable verbose output]'
+
+        #case $state in
+            #country)
+                #_arguments '1:Countries:(France Germany Italy)'
+                #;;
+            #*)
+                #case $words[2] in
+                    #France)
+                        #compadd "$@" Paris Lyon Marseille
+                        #;;
+                    #Germany)
+                        #compadd "$@" Berlin Munich Dresden
+                        #;;
+                    #Italy)
+                        #compadd "$@" Rome Napoli Palermo
+                        #;;
+                    #*)
+                        #_files
+                #esac
+        #esac
+}
+
+_autorandr "$@"
