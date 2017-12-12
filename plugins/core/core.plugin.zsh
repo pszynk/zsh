@@ -25,7 +25,7 @@ alias mail="mymailx"
 alias mailx="mymailx"
 
 # tmux 256 - colours
-alias tmux='tmux -2 -f ${XDG_CONFIG_HOME}/tmux/tmux.conf'
+alias tmux='tmux -2'
 
 alias ytd="youtube-dl --external-downloader aria2c --external-downloader-args \
     \"--conf-path=${XDG_CONFIG_HOME}/aria2/ytd-aria2.conf\" \
