@@ -5,4 +5,4 @@
 
 export LESSOPEN="|lesspipe.sh %s"
 export LESS="-R"
-export LESSCOLORIZER="pygmentize"
+export LESSCOLORIZER="pygmentize -f terminal"
